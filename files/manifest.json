@@ -1,0 +1,32 @@
+﻿{
+	"name":"唯品会抢购宝",
+	"manifest_version": 2,
+	"version":"1.0",
+	"description":"能够快速的抢购心爱的宝贝，还能自动不停的尝试售完但未付款的宝贝，一旦宝贝被别人退出，能立刻‘抢夺’，无须长时间的等待...",
+	"icons": 
+    { 
+		"16": "icon.png",             
+		"48": "icon48.png",            
+		"128": "icon128.png" 
+    },
+	"background": {
+		"scripts":["js/jquery.js","js/bg.js"]
+	},
+	"browser_action":{
+		"default_icon":"icon.png",
+		"default_title":"grap for vipshop",
+		"default_popup":""
+	},
+	"content_scripts":[
+		{
+			"matches": ["http://www.vip.com/*"],
+			"js": ["js/jquery.js", "js/myscript.js"]
+		}
+	],
+	"permissions": [
+		"tabs","notifications", "http://www.vip.com/*","http://cart.vip.com/*","http://www.vip.com/*","http://stock.vip.com/*"
+	],
+	"web_accessible_resources": [
+		"success.png"
+    ]
+}
